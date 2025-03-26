@@ -51,32 +51,6 @@ yarn dev
 
 The documentation interface will be available at [http://localhost:3000](http://localhost:3000).
 
-## Usage
-
-The API Explorer provides a simple interface to:
-
-1. Select a blockchain network (Ethereum Mainnet, Sepolia, Holesky, etc.)
-2. Choose an RPC method
-3. Configure request parameters
-4. Execute the request and view responses
-
-All requests are processed through the custom RPC provider system, ensuring unlimited access without the need for API keys.
-
-## Backend Architecture
-
-The RPC provider system consists of several components:
-
-1. **API Gateway**: Accepts and validates incoming JSON requests
-2. **Rate Limiter**: Prevents abuse while allowing high throughput
-3. **Redis Queue**: Stores and distributes incoming requests
-4. **Network Workers**: Blockchain-specific processors that:
-   - Pull requests from the queue
-   - Connect to appropriate blockchain nodes
-   - Process RPC calls
-   - Return formatted responses
-
-This architecture ensures high availability and scalability while eliminating traditional access limitations.
-
 ## Supported Networks
 
 The documentation explorer and backend currently support:
